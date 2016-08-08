@@ -1,5 +1,5 @@
 class MakersBnb < Sinatra::Base
-  get '/session/new' do
-    'Login Page!'
+  get '/' do
+    erb :index
   end
 end
