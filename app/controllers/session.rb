@@ -13,7 +13,6 @@ class MakersBnb < Sinatra::Base
       flash.keep[:warning] = "Incorrect Email or Password Provided!"
       redirect '/session/new'
     end
-
   end
 
   post '/session/create' do
@@ -22,11 +21,17 @@ class MakersBnb < Sinatra::Base
 
     if user.save
       flash.keep[:notice] = 'Sign-up Successful!'
-      redirect to('/')
+      redirect '/'
     else
       flash.keep[:error] = user.errors.full_messages
        redirect '/'
     end
+  end
+
+  delete '/session/end' do
+    session[:user_id] = nil
+    flash.keep[:notice] = 'Log out successful'
+    redirect '/'
   end
 
 end
