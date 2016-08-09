@@ -1,6 +1,5 @@
 class User
   include DataMapper::Resource
-  # include
 
   property :id,       Serial
   property :name,     String
