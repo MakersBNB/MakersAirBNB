@@ -1,8 +1,4 @@
 class MakersBnb < Sinatra::Base
-  get '/' do
-    erb :index
-
-  end
 
   get '/session/new' do
     erb :"session/new"
@@ -14,7 +10,8 @@ class MakersBnb < Sinatra::Base
       session[:user_id] = user.id
       redirect('/')
     else
-      redirect('/session/new')
+      flash.keep[:warning] = "Incorrect Email or Password Provided!"
+      redirect '/session/new'
     end
 
   end
@@ -28,7 +25,8 @@ class MakersBnb < Sinatra::Base
       flash.keep[:notice] = 'Sign-up Successful!'
       redirect to('/')
     else
-       erb :index
+      flash.keep[:error] = user.errors.full_messages
+       redirect '/'
     end
   end
 

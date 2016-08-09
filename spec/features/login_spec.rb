@@ -6,13 +6,13 @@ feature 'login' do
   end
 
   scenario 'user can log in' do
-    visit '/'
-    click_link('Login')
-    expect(page.status_code).to eq(200)
-    fill_in :email,   with: 'test@gmail.com'
-    fill_in :password,with: 'test'
-    click_button('Login')
+    login
     expect(page).to have_content('Welcome to Makersbnb test')
+  end
+
+  scenario 'user cannot login with incorrect password' do
+    login(password: 'wrong!')
+    expect(page).to have_content('Incorrect Email or Password Provided!')
   end
 
 end

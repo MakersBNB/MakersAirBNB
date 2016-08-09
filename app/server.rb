@@ -1,8 +1,10 @@
 class MakersBnb < Sinatra::Base
-
   enable :sessions
-
   register Sinatra::Flash
+
+  get '/' do
+    erb :index
+  end
 
   helpers do
     def current_user
