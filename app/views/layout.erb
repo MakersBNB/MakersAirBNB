@@ -6,6 +6,10 @@
   </head>
   <body>
     <a href="/session/new">Login</a>
+    <form action="/session/end" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Logout">
+    </form>
     <h2>Welcome to Makersbnb <%= current_user.name if session[:user_id] %></h2>
     <%= flash[:warning] if flash[:warning] %>
     <% if flash[:notice] %>
