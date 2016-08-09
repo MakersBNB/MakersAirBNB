@@ -1,8 +1,8 @@
 require 'bcrypt'
 class User
   include DataMapper::Resource
-  attr_reader :password
-  attr_accessor :password_confirmation
+
+  attr_writer :password_confirmation
 
   property :id,                 Serial
   property :name,               String
@@ -25,5 +25,9 @@ class User
       return user
     end
   end
+
+  private
+  
+  attr_reader :password
 
 end
