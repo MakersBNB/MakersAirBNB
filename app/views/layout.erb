@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="/session/new">Login</a>
+    <h2>Welcome to Makersbnb <%= current_user.name if session[:user_id] %></h2>
+
+    <%= yield %>
+  </body>
+</html>
