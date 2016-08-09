@@ -1,7 +1,8 @@
 feature 'login' do
 
   before do
-    User.create(name: 'test', email: 'test@gmail.com', password: 'test')
+    User.create(name: 'test', email: 'test@gmail.com', password: 'test',
+     password_confirmation: 'test')
   end
 
   scenario 'user can log in' do
