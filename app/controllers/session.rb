@@ -8,7 +8,7 @@ class MakersBnb < Sinatra::Base
     erb :"session/new"
   end
 
-  post '/session/create' do
+  post '/session/new' do
     user =  User.authenticate(email: params[:email], password: params[:password])
     if user
       session[:user_id] = user.id
@@ -24,6 +24,7 @@ class MakersBnb < Sinatra::Base
       password: params[:password])
     if user.save
       session[:user_id] = user.id
+      flash.keep[:notice] = 'Sign-up Successful!'
       redirect to('/')
     else
        erb :index

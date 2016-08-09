@@ -7,7 +7,9 @@
   <body>
     <a href="/session/new">Login</a>
     <h2>Welcome to Makersbnb <%= current_user.name if session[:user_id] %></h2>
-
+    <% if flash[:notice] %>
+      <%=flash[:notice] %>
+      <% end %>
     <%= yield %>
   </body>
 </html>
