@@ -1,0 +1,8 @@
+%form{ :action => "/spaces/new", :method => "get" }
+  %input{ :type => "submit", :value => "List a Space" }
+%ul
+  - if @space
+    - @space.each do |space|
+      %li= space.name
+      %li= space.description
+      %li= space.price
