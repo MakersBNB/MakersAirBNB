@@ -13,6 +13,8 @@ class User
 
   validates_confirmation_of :password
 
+  has n, :bookings
+
   def password=(password)
     @password = password
     self.encrypted_password = BCrypt::Password.create(password)

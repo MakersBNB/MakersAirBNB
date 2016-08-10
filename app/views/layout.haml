@@ -1,9 +1,13 @@
 !!!
 %html
   %head
+    %link{ :href => "../../css/main.css", :type => "text/css", :rel => "stylesheet" }
     %title
   %body
-    %a{ :href => "/session/new", :title => "Login" } 
+    %a{ :href => "/spaces", :title => "Spaces" }
+      Spaces
+    %a{ :href => "/session/new", :title => "Login" }
+      Login
     %form{ :action => "/session/end", :method => "post" }
       %input{ :type => "hidden", :name => "_method", :value => "delete" }
       %input{ :type => "submit", :value => "Logout" }
