@@ -2,11 +2,11 @@ class MakersBnb < Sinatra::Base
   enable :sessions
   set :session_secret, 'super secret'
   use Rack::MethodOverride
-  
+
   register Sinatra::Flash
 
   get '/' do
-    erb :index
+    haml :index
   end
 
   helpers do

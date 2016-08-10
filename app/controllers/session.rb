@@ -1,7 +1,7 @@
 class MakersBnb < Sinatra::Base
 
   get '/session/new' do
-    erb :"session/new"
+    haml :"session/new"
   end
 
   post '/session/new' do
