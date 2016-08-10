@@ -1,0 +1,12 @@
+%form{ :action => '/spaces', :method => 'post'}
+  %label
+    Name:
+    %input{ :type => 'text', :name => 'name', :require => true }
+  %label
+    Description:
+    %textarea{ :name => 'description', :require => true, :cols => 60, :rows => 10 }
+  %label
+    Price:
+    %input{ :type => 'text', :name => 'price', :require => true }
+  %label
+    %input{ :type => 'submit', :value => 'List my Space' }

@@ -1,6 +1,6 @@
 def sign_up(name: 'John Smith', email: 'test1@email.com',
-            password: 'Passw0rd123',
-            password_confirmation: 'Passw0rd123')
+            password: 'test',
+            password_confirmation: 'test')
   visit '/'
   fill_in 'name', with: name
   fill_in 'email', with: email
@@ -9,7 +9,7 @@ def sign_up(name: 'John Smith', email: 'test1@email.com',
   click_button 'Sign up'
 end
 
-def login(email: 'test@gmail.com', password: 'test')
+def login(email: 'test1@gmail.com', password: 'test')
   visit '/'
   click_link('Login')
   fill_in :email,   with: email
