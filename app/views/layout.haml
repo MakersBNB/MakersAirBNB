@@ -8,6 +8,8 @@
       Spaces
     %a{ :href => "/session/new", :title => "Login" }
       Login
+    %title
+  %body
     %form{ :action => "/session/end", :method => "post" }
       %input{ :type => "hidden", :name => "_method", :value => "delete" }
       %input{ :type => "submit", :value => "Logout" }
