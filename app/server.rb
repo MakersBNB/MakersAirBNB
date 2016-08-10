@@ -10,6 +10,10 @@ class MakersBnb < Sinatra::Base
     haml :index
   end
 
+  get '/test' do
+    File.read(File.join('public', 'SpecRunner.html'))
+  end
+
   helpers do
     def current_user
       @current_user ||= User.get(session[:user_id])
