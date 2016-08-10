@@ -5,19 +5,21 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/session/new' do
-    user =  User.authenticate(email: params[:email], password: params[:password])
+    user = User.authenticate(email: params[:email],
+                             password: params[:password])
     if user
       session[:user_id] = user.id
       redirect('/spaces')
     else
-      flash.keep[:warning] = "Incorrect Email or Password Provided!"
+      flash.keep[:warning] = 'Incorrect Email or Password Provided!'
       redirect '/session/new'
     end
   end
 
   post '/session/create' do
     user = User.create(name: params[:name], email: params[:email],
-      password: params[:password], password_confirmation: params[:password_confirmation])
+                       password: params[:password],
+                       password_confirmation: params[:password_confirmation])
 
     if user.save
       flash.keep[:notice] = 'Sign-up Successful!'

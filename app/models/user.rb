@@ -9,8 +9,9 @@ class User
   property :email,              String, unique: true
   property :encrypted_password, String, length: 60
 
-  validates_presence_of :encrypted_password
+  has n, :spaces
 
+  validates_presence_of :encrypted_password
   validates_confirmation_of :password
 
   def password=(password)
