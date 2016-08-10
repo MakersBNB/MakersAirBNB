@@ -4,6 +4,7 @@ require 'sinatra/base'
 require 'pry'
 require 'sinatra/flash'
 require 'database_cleaner'
+require 'haml'
 
 require_relative 'data_mapper_setup'
 require_relative 'server'

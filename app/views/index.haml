@@ -1,0 +1,14 @@
+%form{ :action => "/session/create", :method => "post" }
+  %label
+    Name:
+    %input{ :type => "text", :name => "name", :required => true }
+  %label
+    Email:
+    %input{ :type => "email", :name => "email", :required => true }
+  %label
+    Password:
+    %input{ :type => "password", :name => "password", :required => true }
+  %label
+    Password Confirm:
+    %input{ :type => "password", :name => "password_confirmation", :required => true }
+  %input{ :type => "submit", :value => "Sign up" }
