@@ -6,5 +6,5 @@ class Booking
   property :booked_to, DateTime
 
   belongs_to :user
-  #belongs_to :space
+
 end
