@@ -8,6 +8,8 @@ class MakersBnb < Sinatra::Base
     space = Space.create(name: params[:name],
                          description: params[:description],
                          price: params[:price],
+                         date_from: params[:date_from],
+                         date_to: params[:date_to],
                          user_id: session[:user_id])
     redirect '/spaces'
   end

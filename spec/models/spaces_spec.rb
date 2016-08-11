@@ -8,6 +8,8 @@ describe Space do
     expect{ Space.create(name: 'Relaxing space',
                          description: 'Feel at home in this beautiful townhouse',
                          price: 25,
-                         user_id: user.id) }.to change{ Space.count }.by(1)
+                         date_from: "2016/08/11",
+                         date_to: "2016/08/15",
+                         user_id: user.id)}.to change{ Space.count }.by(1)
   end
 end
