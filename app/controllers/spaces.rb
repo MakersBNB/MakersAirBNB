@@ -9,7 +9,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/spaces/:id' do |i|
-    @space = Space.get(id: i)
+    @space = Space.get(params[:id])
     haml :'spaces/booking'
   end
 

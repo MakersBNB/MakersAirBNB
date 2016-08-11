@@ -8,6 +8,51 @@ h1 {
   margin-left: 25%;
 }
 
+#calendar{
+  position: relative;
+}
+
+h4 {
+  color: #941014;
+}
+
+.spaces {
+  margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+  /*width: 500px;*/
+}
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
+li:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+li a:link {
+  text-decoration: none;
+}
+
+
 table {
   width: 306px;
   height: 260px;
@@ -43,7 +88,6 @@ td {
   width: 40px;
   height: 30px;
   color: #3e4348;
-  text-shadow: 1px 1px rgba(255, 255, 255, 0.7);
 }
 
 #inactive {
@@ -66,12 +110,7 @@ tr:nth-of-type(1) {
 }
 
 td:hover {
-  background: #FCFCFC;
-}
-
-td:active {
-  background: #4CC954;
-  color: white;
+  background: #fff;
 }
 
 .calendar {

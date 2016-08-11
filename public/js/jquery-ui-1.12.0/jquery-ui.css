@@ -316,6 +316,8 @@ button.ui-button::-moz-focus-inner {
 	width: 17em;
 	padding: .2em .2em 0;
 	display: none;
+	margin-left:auto;
+	margin-right:auto;
 }
 .ui-datepicker .ui-datepicker-header {
 	position: relative;
@@ -980,10 +982,11 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-	border: 1px solid #003eff;
-	background: #007fff;
+	border: 1px solid #000000;
+	background: #ff5a5f;
 	font-weight: normal;
 	color: #ffffff;
+
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
