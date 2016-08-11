@@ -2,6 +2,8 @@ var d = new Date();
 var month = d.getMonth() + 1;
 var year = d.getFullYear();
 var date = year + "-" + month + "-01";
+var selectedDateTo = null;
+var selectedDateFrom = null;
 
 $('td').click(function(){
   var td = $(this);
