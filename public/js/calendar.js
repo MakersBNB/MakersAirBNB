@@ -5,13 +5,6 @@ var date = year + "-" + month + "-01";
 var selectedDateTo = null;
 var selectedDateFrom = null;
 
-$('td').click(function(){
-  var td = $(this);
-  if (td.text()) {
-    $('.selected').removeClass('selected');
-    $(this).addClass('selected');
-  }
-});
 
 $( document ).ready(function() {
   for(var i = 0; i <= 5; i++) {
@@ -30,6 +23,10 @@ $( document ).ready(function() {
     decreaseDate();
     deleteRows();
     updateCell(getDate());
+  });
+
+  $(".").click(function(){
+    getSelectedDate();
   });
 
 });
@@ -105,4 +102,8 @@ function howManyDays() {
     default:
       return 31;
   }
+}
+
+function getSelectedDate(day){
+  return year + "-" +  month + "-" + day;
 }
