@@ -12,14 +12,24 @@
     %script{ :type => "text/javascript", :src => "../../js/datepicker.js" }
     %title
   %body
-    - if current_user
-      %form{ :action => "/session/end", :method => "post" }
-        %input{ :type => "hidden", :name => "_method", :value => "delete" }
-        %input{ :type => "submit", :value => "Logout" }
-      %a{ :href => "/spaces", :title => "spaces" } Spaces
-      %a{ :href => "/spaces/new", :title => "request" } Request
-    - else
-      %a{ :href => "/session/new", :title => "Login" } Login
+    %nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          %a.navbar-brand{:href => "/"} MakersBnB
+        %ul.nav.navbar-nav
+          %li{:class => "#{"active" if active_page?}"}
+            %a{:href => "/"} Home
+          - if current_user
+            %li
+              %form{ :action => "/session/end", :method => "post" }
+                %input{ :type => "hidden", :name => "_method", :value => "delete" }
+                %input{ :type => "submit", :value => "Logout" }
+            %li
+              %a{ :href => "/spaces", :title => "spaces" } Spaces
+            %li
+              %a{ :href => "/spaces/new", :title => "request" } Requests
+          - else
+            %a{ :href => "/session/new", :title => "Login" } Login
     %h2= "Welcome to Makersbnb #{current_user.name}" if session[:user_id]
     = flash[:warning] if flash[:warning]
     - if flash[:notice]
