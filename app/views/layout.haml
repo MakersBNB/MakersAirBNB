@@ -1,6 +1,9 @@
 !!!
 %html
   %head
+    %script{ :type => "text/javascript", :src => "../../js/jquery-3.1.0.min.js" }
+    %link{ :href => "../../css/main.css", :type => "text/css", :rel => "stylesheet" }
+    %script{ :type => "text/javascript", :src => "../../js/calendar.js" }
     %title
   %body
     - if current_user
@@ -11,7 +14,6 @@
       %a{ :href => "/spaces/new", :title => "request" } Request
     - else
       %a{ :href => "/session/new", :title => "Login" } Login
-
     %h2= "Welcome to Makersbnb #{current_user.name}" if session[:user_id]
     = flash[:warning] if flash[:warning]
     - if flash[:notice]

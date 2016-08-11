@@ -4,6 +4,10 @@
   %ul
     - if @space
       - @space.each do |space|
-        %li= space.name
-        %li= space.description
-        %li= space.price
+        %a{ :href => "/spaces/#{space.id}" }
+          %li= space.name
+          %li= space.description
+
+%a{ :href => "spaces/1", :title => 'Relaxing space by the beach' }
+  %strong
+    Relaxing space by the beach
