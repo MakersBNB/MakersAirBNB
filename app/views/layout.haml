@@ -29,7 +29,8 @@
             %li
               %a{ :href => "/spaces/new", :title => "request" } Requests
           - else
-            %a{ :href => "/session/new", :title => "Login" } Login
+            %li
+              %a{ :href => "/session/new", :title => "Login" } Login
     %h2= "Welcome to Makersbnb #{current_user.name}" if session[:user_id]
     = flash[:warning] if flash[:warning]
     - if flash[:notice]
