@@ -13,6 +13,10 @@ class MakersBnb < Sinatra::Base
     def current_user
       @current_user ||= User.get(session[:user_id])
     end
+
+    def active_page?(path = '/')
+      request.path_info == path
+    end
   end
 
   # start the server if ruby file executed directly

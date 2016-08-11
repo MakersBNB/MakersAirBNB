@@ -1,4 +1,9 @@
 %form{ :action => "/session/new", :method => "post" }
-  %input{ :type => "email", :name => "email" }
-  %input{ :type => "password", :name => "password" }
+  %label
+    Email:
+    %input{ :type => "email", :name => "email" }
+  %label
+    Password
+    %input{ :type => "password", :name => "password" }
+
   %input{ :type => "submit",  :value => "Login" }

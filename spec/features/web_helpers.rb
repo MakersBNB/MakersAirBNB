@@ -1,4 +1,4 @@
-def sign_up(name: 'John Smith', email: 'test1@email.com',
+def sign_up(name: 'John Smith', email: 'test1@gmail.com',
             password: 'test',
             password_confirmation: 'test')
   visit '/'
