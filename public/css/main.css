@@ -46,7 +46,7 @@ td {
   text-shadow: 1px 1px rgba(255, 255, 255, 0.7);
 }
 
-.inactive {
+#inactive {
   color: #b9bbbd;
   cursor: default;
 }
