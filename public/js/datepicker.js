@@ -2,8 +2,8 @@ $( document ).ready(function() {
   $(function(){
     var fromDate = $('#availableFrom').val();
     var toDate = $('#availableTo').val();
-    $('#selectDate').datepicker({ dateFormat: 'dd/mm/yy',
-        altFormat: 'dd/mm/yy',
+    $('#selectDate').datepicker({ dateFormat: 'yyyy-mm-dd',
+        altFormat: 'yyyy-mm-dd',
         minDate: fromDate,
         maxDate: toDate
     });

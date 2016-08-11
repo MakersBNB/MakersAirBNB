@@ -8,7 +8,8 @@ class MakersBnb < Sinatra::Base
     haml :'spaces/new'
   end
 
-  get '/spaces/:id' do
+  get '/spaces/:id' do |i|
+    @space = Space.get(id: i)
     haml :'spaces/booking'
   end
 
