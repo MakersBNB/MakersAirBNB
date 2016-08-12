@@ -15,6 +15,7 @@ gem 'haml'
 group :test, :development do
   gem 'rspec'
   gem 'rspec-sinatra'
+  gem 'selenium-webdriver'
   gem 'capybara'
   gem 'pry-byebug'
   gem 'database_cleaner'

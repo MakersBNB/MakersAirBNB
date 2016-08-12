@@ -1,0 +1,10 @@
+%div
+  %input{ :type => "hidden", :id => "availableFrom", :value => @space.date_from  }
+  %input{ :type => "hidden", :id => "availableTo", :value => @space.date_to }
+
+%div{:style => "overflow:hidden;"}
+  .form-group
+    .row
+      .col-md-8#calendar
+%button.btn.btn-success
+  Request to book

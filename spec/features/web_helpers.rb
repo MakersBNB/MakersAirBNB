@@ -1,6 +1,6 @@
-def sign_up(name: 'John Smith', email: 'test1@email.com',
-            password: 'Passw0rd123',
-            password_confirmation: 'Passw0rd123')
+def sign_up(name: 'John Smith', email: 'test1@gmail.com',
+            password: 'test',
+            password_confirmation: 'test')
   visit '/'
   fill_in 'name', with: name
   fill_in 'email', with: email
@@ -9,10 +9,18 @@ def sign_up(name: 'John Smith', email: 'test1@email.com',
   click_button 'Sign up'
 end
 
-def login(email: 'test@gmail.com', password: 'test')
+def login(email: 'test1@gmail.com', password: 'test')
   visit '/'
   click_link('Login')
   fill_in :email,   with: email
   fill_in :password,with: password
   click_button('Login')
+end
+
+def select_driver(example)
+  if example.metadata[:js]
+   Capybara.current_driver = :selenium
+ else
+   Capybara.use_default_driver
+ end
 end

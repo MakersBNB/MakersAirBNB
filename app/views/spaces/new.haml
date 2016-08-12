@@ -1,0 +1,28 @@
+- if current_user
+  %container.center
+    %h2
+      List a Space
+    %p
+      Add your listing to MakersBnB
+    %form{ :action => '/spaces', :method => 'post'}
+      %div.form-group.center
+        %label
+          Name:
+          %input.form-control{ :type => 'text', :name => 'name', :require => true }
+      %div.form-group
+        %label
+          Description:
+          %textarea.form-control{ :name => 'description', :require => true, :cols => 60, :rows => 10 }
+      %div.form-group
+        %label
+          Price:
+          %input.form-control{ :type => 'text', :name => 'price', :require => true }
+      %div.form-group
+        %label
+          Available from
+          %input.form-control{ :type => 'date', :name => 'date_from', :require => true }
+      %div.form-group
+        %label
+          Available to
+          %input.form-control{ :type => 'date', :name => 'date_to', :require => true }
+      %input.btn.btn-default{ :type => 'submit', :value => 'List my Space' }

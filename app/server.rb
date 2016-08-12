@@ -1,6 +1,7 @@
 class MakersBnb < Sinatra::Base
   enable :sessions
   set :session_secret, 'super secret'
+  set :public_folder, 'public'
   use Rack::MethodOverride
 
   register Sinatra::Flash
@@ -9,9 +10,17 @@ class MakersBnb < Sinatra::Base
     haml :index
   end
 
+  get '/test' do
+    File.read(File.join('public', 'SpecRunner.html'))
+  end
+
   helpers do
     def current_user
       @current_user ||= User.get(session[:user_id])
+    end
+
+    def active_page?(path = '/')
+      request.path_info == path
     end
   end
 
