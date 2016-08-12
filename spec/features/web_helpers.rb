@@ -17,6 +17,18 @@ def login(email: 'test1@gmail.com', password: 'test')
   click_button('Login')
 end
 
+def create_space
+  next_three_days = Date.today + 10
+  visit '/spaces'
+  click_button('List a Space')
+  fill_in :name,          with: 'Beautiful relaxing space'
+  fill_in :description,   with: 'Feel at home in this beautiful townhouse'
+  fill_in :price,         with:  25
+  fill_in :date_from,     with:  Date.today.strftime("%d/%m/%Y")
+  fill_in :date_to,       with:  next_three_days.strftime("%d/%m/%Y")
+  click_button('List my Space')
+end
+
 def select_driver(example)
   if example.metadata[:js]
    Capybara.current_driver = :selenium
