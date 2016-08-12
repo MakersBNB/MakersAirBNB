@@ -1,7 +1,9 @@
 - if current_user
   .container
     %form{ :action => "/spaces/new", :method => "get" }
-      %input{ :type => "submit", :value => "List a Space" }
+      %input.btn.btn-primary{ :type => "submit", :value => "List a Space" }
+      %br
+      %br
         - if @space
           - @space.each do |space|
             .well
