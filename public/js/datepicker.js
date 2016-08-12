@@ -7,9 +7,14 @@ $( document ).ready(function() {
     $('#calendar').datepicker({ dateFormat: 'dd/mm/yy',
         altFormat: 'dd/mm/yy',
         minDate: fromDate,
-        maxDate: toDate
+        maxDate: toDate,
+        onSelect: function (date) {
+          $('#selectedFrom').val(date);
+          $('#selectedTo').val(date);
+        }
     });
   });
+
 });
 
 function formattedDate(date) {
