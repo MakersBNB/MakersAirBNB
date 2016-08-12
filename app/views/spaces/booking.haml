@@ -6,5 +6,7 @@
   .form-group
     .row
       .col-md-8#calendar
-%button.btn.btn-success
-  Request to book
+%form{ :action => '/request/new', :method => 'post'}
+  %input{ :type => "hidden", :id => "selectedFrom"}
+  %input{ :type => "hidden", :id => "selectedTo" }
+  %input.btn.btn-success{ :type => 'submit', :value => 'Request to book'}
