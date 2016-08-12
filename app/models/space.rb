@@ -3,7 +3,7 @@ class Space
 
   property :id,          Serial
   property :name,        String
-  property :description, String
+  property :description, Text, :length => 50000
   property :price,       Integer
   property :date_from,   Date
   property :date_to,     Date

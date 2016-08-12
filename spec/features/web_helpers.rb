@@ -16,3 +16,11 @@ def login(email: 'test1@gmail.com', password: 'test')
   fill_in :password,with: password
   click_button('Login')
 end
+
+def select_driver(example)
+  if example.metadata[:js]
+   Capybara.current_driver = :selenium
+ else
+   Capybara.use_default_driver
+ end
+end

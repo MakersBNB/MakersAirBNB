@@ -1,9 +1,13 @@
 - if current_user
   %form{ :action => "/spaces/new", :method => "get" }
     %input{ :type => "submit", :value => "List a Space" }
-  %ul
-    - if @space
-      - @space.each do |space|
-        %li= space.name
-        %li= space.description
-        %li= space.price
+  %div.list-group.col-md-6
+    %ul
+      - if @space
+        - @space.each do |space|
+          %li.list-group-item.list-group-item-action
+            %a{ :href => "/spaces/#{space.id}" }
+              %h4.list-group-item-heading
+                = space.name
+              %p.list-group-item-text
+                = space.description

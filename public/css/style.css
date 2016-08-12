@@ -1,0 +1,11 @@
+.center {
+    text-align:center;
+}
+
+.center form {
+    margin: 0 auto;
+}
+
+li a:link {
+  text-decoration: none;
+}

@@ -14,6 +14,8 @@ class User
   validates_presence_of :encrypted_password
   validates_confirmation_of :password
 
+  has n, :bookings
+
   def password=(password)
     @password = password
     self.encrypted_password = BCrypt::Password.create(password)
