@@ -1,13 +1,22 @@
 - if current_user
-  %form{ :action => "/spaces/new", :method => "get" }
-    %input{ :type => "submit", :value => "List a Space" }
-  %div.list-group.col-md-6
-    %ul
-      - if @space
-        - @space.each do |space|
-          %li.list-group-item.list-group-item-action
-            %a{ :href => "/spaces/#{space.id}" }
-              %h4.list-group-item-heading
-                = space.name
-              %p.list-group-item-text
-                = space.description
+  .container
+    .row
+      .col-md-6
+        %form{ :action => "/spaces/new", :method => "get" }
+          %input.btn.btn-primary{ :type => "submit", :value => "List a Space" }
+          %br
+          %br
+            - if @space
+              - @space.each do |space|
+                .well.well-md
+                  .row
+                    .col-xs-3.col-md-3.text-center
+                      %img.img-rounded.img-responsive{:alt => "bootsnipp", :src => "../../images/image1.jpg"}/
+                    .col-xs-9.col-md-9.section-box
+                      %h2
+                        = space.name
+                        %a{ :href => "/spaces/#{space.id}" }
+                          %span.glyphicon.glyphicon-new-window
+                      %p
+                        = space.description
+                      %hr/
