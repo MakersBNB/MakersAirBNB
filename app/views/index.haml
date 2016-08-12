@@ -19,7 +19,7 @@
               %input.form-control{:name => "password_confirmation", :type => "password", :required => true}/
             .form-group.col-lg-6
               %label Email Address
-              %input.form-control{:name => "email", :type => "email", :required => true}/
+              %input.form-control{:name => "email", :type => "email", :pattern => "[^@]+@[^@]+\.[a-zA-Z]{2,6}", :required => true}/
             .col-md-6
               %br
               %button.btn.btn-primary{:type => "submit"} Sign up
