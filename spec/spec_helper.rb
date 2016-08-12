@@ -11,6 +11,8 @@ require './app/models/user'
 require './app/models/booking'
 require './app/models/space'
 require 'features/web_helpers'
+require 'coveralls'
+Coveralls.wear!
 
 Capybara.app = MakersBnb
 
