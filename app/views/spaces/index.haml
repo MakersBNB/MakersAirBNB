@@ -15,7 +15,7 @@
                     .col-xs-9.col-md-9.section-box
                       %h2
                         = space.name
-                        %a{ :href => "/spaces/#{space.id}" }
+                        %a#space-link{ :href => "/spaces/#{space.id}" }
                           %span.glyphicon.glyphicon-new-window
                       %p
                         = space.description
