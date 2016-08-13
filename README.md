@@ -1,4 +1,6 @@
+[![Coverage Status](https://coveralls.io/repos/github/MakersBNB/MakersAirBNB/badge.svg?branch=master)](https://coveralls.io/github/MakersBNB/MakersAirBNB?branch=master)
 [![Stories in Ready](https://badge.waffle.io/MakersBNB/MakersAirBNB.png?label=ready&title=Ready)](https://waffle.io/MakersBNB/MakersAirBNB)
+
 # MakersAirBNB
 An AirBNB clone from Makers to Makers
 

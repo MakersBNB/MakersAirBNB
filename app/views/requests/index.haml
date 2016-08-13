@@ -1,0 +1,6 @@
+- if @requests
+  - @requests.each do |request|
+    = request.space.name
+    %form{ :action => "/request/approve/#{request.id}", :method => 'post'}
+      %input{ :type => "submit", :value => "Approve Request" }
+    %br
