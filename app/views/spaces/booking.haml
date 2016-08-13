@@ -1,6 +1,6 @@
 %div
-  %input{ :type => "text", :id => "availableFrom", :value => @space.date_from  }
-  %input{ :type => "text", :id => "availableTo", :value => @space.date_to }
+  %input{ :type => "hidden", :id => "availableFrom", :value => @space.date_from  }
+  %input{ :type => "hidden", :id => "availableTo", :value => @space.date_to }
 
 %div{:style => "overflow:hidden;"}
   .form-group
