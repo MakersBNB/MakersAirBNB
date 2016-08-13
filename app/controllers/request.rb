@@ -14,4 +14,21 @@ class MakersBnb < Sinatra::Base
     end
   end
 
+  get '/requests' do
+    @requests = Booking.all(Booking.space.user.id => session[:user_id])
+    haml :'/requests/index'
+  end
+
+  post '/request/approve/:id' do |i|
+    booking = Booking.first_or_create(:id => params[:id]).update(:confirmed => true)
+
+    if booking
+      flash.keep[:notice] = "Booking confirmed"
+      redirect '/requests'
+    else
+      flash.keep[:warning] = "Warning Booking Not Confirmed!"
+      redirect '/requests'
+    end
+  end
+
 end

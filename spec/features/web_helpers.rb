@@ -29,6 +29,17 @@ def create_space
   click_button('List my Space')
 end
 
+def make_booking
+  Capybara.current_driver = :selenium
+  sign_up(email: 'test2@gmail.com')
+  login(email: 'test2@gmail.com')
+  create_space
+  visit '/spaces'
+  click_link 'space-link'
+  click_link '18'
+  click_button 'Request to book'
+end
+
 def select_driver(example)
   if example.metadata[:js]
    Capybara.current_driver = :selenium

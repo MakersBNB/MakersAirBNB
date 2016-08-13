@@ -4,7 +4,7 @@ feature 'Bookings' do
     login(email: 'k@test.com', password: 'test')
     create_space
     visit '/spaces'
-    click_link 'space-link'
+    first('#space-link').click
     click_link '18'
     click_button 'Request to book'
     expect(page).to have_content 'Your booking request has been sent'
